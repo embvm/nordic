@@ -1,0 +1,4 @@
+[wrap-git]
+url = https://github.com/embvm/embvm-core.git
+revision = head
+clone-recursive = true
