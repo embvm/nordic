@@ -48,4 +48,4 @@ class nRFTWIMTranslator
 	~nRFTWIMTranslator() = default;
 };
 
-#endif NRF_TWIM_HELPER_HPP_
+#endif //NRF_TWIM_HELPER_HPP_

@@ -231,4 +231,4 @@ static inline uint32_t get_errorsrc_(NRF_TWIM_Type* twi) noexcept
 	return error;
 }
 
-#endif NRF_TWIM_HELPER_PRIVATE_HPP_
+#endif //NRF_TWIM_HELPER_PRIVATE_HPP_

@@ -29,4 +29,4 @@ class nRFGPIOTranslator
 	~nRFGPIOTranslator() = default;
 };
 
-#endif // NRF_GPIO_HELPER_HPP_
+#endif //NRF_GPIO_HELPER_HPP_
