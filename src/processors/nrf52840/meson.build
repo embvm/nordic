@@ -27,7 +27,8 @@ nrf52840 = static_library('nrf52840',
         nrf_common_drivers_dep,
         arm_dep,
         nrfx_nrf52840_dep,
-        framework_include_dep
+        framework_include_dep,
+        framework_host_include_dep,
     ],
     native: false
 )
