@@ -1,4 +1,4 @@
-project('PROJECT_NAME',
+project('embvm Nordic Modules',
 	['c', 'cpp'],
 	default_options : [
 		'warning_level=3',
@@ -88,28 +88,28 @@ subdir('build/objcopy')
 # Subprojects #
 ###############
 
-libmemory_subproject = subproject('libmemory')
-etl_subproject = subproject('etl')
+embvm_core_subproject = subproject('embvm-core')
+framework_include_dep = embvm_core_subproject.get_variable('framework_include_dep')
+framework_host_include_dep = embvm_core_subproject.get_variable('framework_host_include_dep')
 
-libmemory_freelist_dep = libmemory_subproject.get_variable('libmemory_freelist_dep')
-etl_dep = etl_subproject.get_variable('etl_dep')
+nrfx_subproject = subproject('nrfx')
+nrfx_nrf52840_dep = nrfx_subproject.get_variable('nrfx_nrf52840_dep')
 
-# Configure the project to include `libc` headers by default
+arm_architecture_subproject = subproject('arm-architecture')
+arm_dep = arm_architecture_subproject.get_variable('arm_dep')
+arm_common_utilties_dep = arm_architecture_subproject.get_variable('arm_common_utilties_dep')
+
+# Used by the FreeRTOS port
+cmsis_cortex_m_include = arm_architecture_subproject.get_variable('cmsis_cortex_m_include')
+
 #######################
 # Process Source Tree #
 #######################
 
 # Add files to this variable if you want them analyzed by clang-tidy
 clangtidy_files = []
-# Add dependencies to this array for testing with Catch2
-catch2_tests_dep = []
 
 subdir('src')
-subdir('test')
-
-# Defined after src and test so catch2_dep is fully populated
-# when creating the built-in targets
-subdir('build/test/catch2')
 
 ###################
 # Tooling Modules #

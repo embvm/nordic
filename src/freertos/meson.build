@@ -1,5 +1,7 @@
 # Nordic FreeRTOS Port
 
+# TODO: How can we override our port/config file? Right now they're forced to use ours
+
 nrf51_freertos_dep = declare_dependency(
     sources: files(
 		'nrf51/port.c',
@@ -9,11 +11,13 @@ nrf51_freertos_dep = declare_dependency(
     include_directories:
     [
     	include_directories('.'),
-    	cmsis_corem_include,
+    	cmsis_cortex_m_include,
     	nordic_private_include_dirs,
     	include_directories('nrf51'),
     ],
-    dependencies: freertos_core_dep,
+    # TODO: is this really needed? Or can we just say: you need to depend on freertos_core_dep and
+    # a processor specific dep?
+    # dependencies: freertos_core_dep,
 )
 
 nrf52_freertos_dep = declare_dependency(
@@ -25,9 +29,11 @@ nrf52_freertos_dep = declare_dependency(
     include_directories:
     [
 	    include_directories('.'),
-    	cmsis_corem_include,
+    	cmsis_cortex_m_include,
     	nordic_private_include_dirs,
     	include_directories('nrf52'),
     ],
-    dependencies: freertos_core_dep,
+    # TODO: is this really needed? Or can we just say: you need to depend on freertos_core_dep and
+    # a processor specific dep?
+    # dependencies: freertos_core_dep,
 )
