@@ -32,4 +32,4 @@ class nRFTWITranslator
 	~nRFTWITranslator() = default;
 };
 
-#endif //NRF_TWI_HELPER_HPP_
+#endif // NRF_TWI_HELPER_HPP_

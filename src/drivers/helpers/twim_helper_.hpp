@@ -98,7 +98,7 @@ static inline void set_tx_buffer_(NRF_TWIM_Type* twi, const uint8_t* tx_data,
 	assert(is_in_nordic_ram(tx_data));
 
 	embutil::volatile_store(&(twi->TXD.PTR), reinterpret_cast<uint32_t>(tx_data));
-	embutil::volatile_store(&(twi->TXD.MAXCNT), static_cast<uint32_t>(length));
+	embutil::volatile_store(&(twi->TXD.MAXCNT), length);
 }
 
 static inline size_t get_txd_amount_(NRF_TWIM_Type* twi) noexcept
@@ -113,7 +113,7 @@ static inline void set_rx_buffer_(NRF_TWIM_Type* twi, uint8_t* rx_data, size_t l
 	assert(is_in_nordic_ram(rx_data));
 
 	embutil::volatile_store(&(twi->RXD.PTR), reinterpret_cast<uint32_t>(rx_data));
-	embutil::volatile_store(&(twi->RXD.MAXCNT), static_cast<uint32_t>(length));
+	embutil::volatile_store(&(twi->RXD.MAXCNT), length);
 }
 
 static inline size_t get_rxd_amount_(NRF_TWIM_Type* twi) noexcept
@@ -231,4 +231,4 @@ static inline uint32_t get_errorsrc_(NRF_TWIM_Type* twi) noexcept
 	return error;
 }
 
-#endif //NRF_TWIM_HELPER_PRIVATE_HPP_
+#endif // NRF_TWIM_HELPER_PRIVATE_HPP_

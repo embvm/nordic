@@ -41,6 +41,9 @@ using namespace embutil;
 // When we want to detect "busy", we can use these handlers to determine "busy"?
 // TODO: also need to get it to work with a dispatcher, or bottom half handler
 
+extern "C" void SPIM0_SPIS0_TWIM0_TWIS0_SPI0_TWI0_IRQHandler();
+extern "C" void SPIM1_SPIS1_TWIM1_TWIS1_SPI1_TWI1_IRQHandler();
+
 #pragma mark - Local Variables -
 
 namespace

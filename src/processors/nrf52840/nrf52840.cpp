@@ -9,7 +9,8 @@
 
 static const uint32_t CPU_FREQ_MHZ = UINT32_C(64);
 
-extern "C" void _putchar(char c) {}
+// TODO: implement? why was this here?
+// extern "C" void _putchar(char c) {}
 
 #pragma mark - Helpers -
 
