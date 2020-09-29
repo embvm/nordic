@@ -1,0 +1,9 @@
+[wrap-file]
+directory=CMSIS_5-5.7.0
+source_filename=CMSIS_5-5.7.0.tgz
+source_fallback_url = https://github.com/ARM-software/CMSIS_5.git
+revision = 5.7.0
+clone-recursive = true
+patch_directory=cmsis-5-build
+
+
