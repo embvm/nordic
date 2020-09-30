@@ -148,7 +148,7 @@ static inline uint8_t get_rx_byte_(NRF_TWI_Type* twi) noexcept
 void nRFTWITranslator::setSCLPin(uint8_t inst, uint8_t port, uint8_t pin) noexcept
 {
 	auto ctrl = getTWIInst(inst);
-	uint32_t value = (port << TWI_PSEL_SCL_PORT_Pos) | pin;
+	uint32_t value = static_cast<uint32_t>(port << TWI_PSEL_SCL_PORT_Pos) | pin;
 
 #if defined(TWI_PSEL_SCL_CONNECT_Pos)
 	volatile_store(&(ctrl->PSEL.SCL), value);
@@ -160,7 +160,7 @@ void nRFTWITranslator::setSCLPin(uint8_t inst, uint8_t port, uint8_t pin) noexce
 void nRFTWITranslator::setSDAPin(uint8_t inst, uint8_t port, uint8_t pin) noexcept
 {
 	auto ctrl = getTWIInst(inst);
-	uint32_t value = (port << TWI_PSEL_SCL_PORT_Pos) | pin;
+	uint32_t value = static_cast<uint32_t>(port << TWI_PSEL_SCL_PORT_Pos) | pin;
 
 #if defined(TWI_PSEL_SDA_CONNECT_Pos)
 	volatile_store(&(ctrl->PSEL.SDA), value);
