@@ -30,7 +30,7 @@ nrf52840 = static_library('nrf52840',
         framework_include_dep,
         framework_host_include_dep,
     ],
-    native: false
+    build_by_default: meson.is_subproject() == false
 )
 
 # TODO: does this need to include framework_include_dep?
