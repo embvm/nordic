@@ -2,3 +2,4 @@
 url = https://github.com/NordicSemiconductor/nrfx.git
 revision = v2.3.0
 patch_directory = nrfx-build
+depth = 1
