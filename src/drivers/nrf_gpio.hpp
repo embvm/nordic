@@ -42,7 +42,7 @@ class nRFGPIOOutput final : public embvm::gpio::output
 	nRFGPIOOutput() noexcept {}
 
 	/// Default destructor
-	~nRFGPIOOutput() final = default;
+	~nRFGPIOOutput() noexcept = default;
 
 	void set(bool v) noexcept final
 	{
