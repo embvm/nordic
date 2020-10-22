@@ -37,15 +37,9 @@ template<uint8_t TPort, uint8_t TPin>
 class nRFGPIOOutput final : public embvm::gpio::output
 {
   public:
-	/** Construct a generic GPIO output
+	/** Construct a Nordic GPIO output
 	 */
-	explicit nRFGPIOOutput() noexcept : embvm::gpio::output("nRF GPIO Output") {}
-
-	/** Construct a named GPIO output
-	 *
-	 * @param name The name of the GPIO pin
-	 */
-	explicit nRFGPIOOutput(const char* name) noexcept : embvm::gpio::output(name) {}
+	nRFGPIOOutput() noexcept {}
 
 	/// Default destructor
 	~nRFGPIOOutput() final = default;
