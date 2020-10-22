@@ -3,7 +3,7 @@ nordic_private_include_dirs = [
 ]
 
 nordic_public_include_dirs = [
-
+	include_directories('drivers')
 ]
 
 # Pick up common drivers first
