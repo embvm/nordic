@@ -64,10 +64,10 @@ class NRF52DongleHWPlatform : public embvm::VirtualHwPlatformBase<NRF52DongleHWP
 	nRFGPIOOutput<1, 9> led2_g_pin{};
 	nRFGPIOOutput<0, 12> led2_b_pin{};
 
-	embvm::led::gpioActiveLow led1{led1_g_pin, "led1"};
-	embvm::led::gpioActiveLow led2_r{led2_r_pin, "led2r"};
-	embvm::led::gpioActiveLow led2_g{led2_g_pin, "led2g"};
-	embvm::led::gpioActiveLow led2_b{led2_b_pin, "led2b"};
+	embvm::led::gpioActiveLow led1{led1_g_pin};
+	embvm::led::gpioActiveLow led2_r{led2_r_pin};
+	embvm::led::gpioActiveLow led2_g{led2_g_pin};
+	embvm::led::gpioActiveLow led2_b{led2_b_pin};
 
 #if 0
 // There is only one button for the application
