@@ -1,6 +1,14 @@
 #include "nrf52dk_fwdemo_hw_platform.hpp"
 #include <cassert>
 
+NRF52DKHWPlatform::NRF52DKHWPlatform() noexcept
+{
+	registerDriver("led1", &led1);
+	registerDriver("led2", &led2);
+	registerDriver("led3", &led3);
+	registerDriver("led4", &led3);
+}
+
 NRF52DKHWPlatform::~NRF52DKHWPlatform() noexcept {}
 
 void NRF52DKHWPlatform::earlyInitHook_() noexcept {}

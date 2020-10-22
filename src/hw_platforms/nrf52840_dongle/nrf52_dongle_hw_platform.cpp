@@ -5,6 +5,14 @@
 extern int __HeapBase;
 extern int __HeapLimit;
 
+NRF52DongleHWPlatform::NRF52DongleHWPlatform() noexcept
+{
+	registerDriver("led1", &led1);
+	registerDriver("led2_r", &led2_r);
+	registerDriver("led2_g", &led2_g);
+	registerDriver("led2_b", &led2_b);
+}
+
 NRF52DongleHWPlatform::~NRF52DongleHWPlatform() noexcept {}
 
 void NRF52DongleHWPlatform::earlyInitHook_() noexcept

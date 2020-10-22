@@ -23,10 +23,10 @@ class NRF52DKHWPlatform : public embvm::VirtualHwPlatformBase<NRF52DKHWPlatform>
 
   public:
 	/// @brief Default constructor.
-	NRF52DKHWPlatform() noexcept {}
+	NRF52DKHWPlatform() noexcept
 
-	/// @brief Default destructor.
-	~NRF52DKHWPlatform() noexcept;
+		/// @brief Default destructor.
+		~NRF52DKHWPlatform() noexcept;
 
 #pragma mark - Inherited Functions -
 
