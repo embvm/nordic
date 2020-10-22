@@ -10,7 +10,7 @@ class nRF52840 : public embvm::VirtualProcessorBase<nRF52840>
 
   public:
 	/// @brief Default constructor.
-	nRF52840() noexcept : ProcessorBase("nrF52840") {}
+	nRF52840() noexcept {}
 
 	/// @brief Default destructor.
 	~nRF52840();

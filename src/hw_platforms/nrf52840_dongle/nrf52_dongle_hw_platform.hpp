@@ -12,7 +12,7 @@ class NRF52DongleHWPlatform : public embvm::VirtualHwPlatformBase<NRF52DongleHWP
 
   public:
 	/// @brief Default constructor.
-	NRF52DongleHWPlatform() : PlatformBase("nRF52840 USB Dongle") {}
+	NRF52DongleHWPlatform() noexcept {}
 
 	/// @brief Default destructor.
 	~NRF52DongleHWPlatform();

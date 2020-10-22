@@ -24,9 +24,7 @@ class nRF51i2cMaster_Blocking final : public embvm::i2c::master
 	static_assert(TTWIIndex == 0 || TTWIIndex == 1, "Nordic only supports instances 0 and 1");
 
   public:
-	nRFi2cMaster_Blocking() noexcept : embvm::i2c::master("nRF I2C Master") {}
-
-	nRFi2cMaster_Blocking(const char* name) noexcept : embvm::i2c::master(name) {}
+	nRFi2cMaster_Blocking() noexcept {}
 
 	~nRFi2cMaster_Blocking() = default;
 

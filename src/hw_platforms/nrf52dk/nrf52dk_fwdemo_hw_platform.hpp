@@ -23,7 +23,7 @@ class NRF52DKHWPlatform : public embvm::VirtualHwPlatformBase<NRF52DKHWPlatform>
 
   public:
 	/// @brief Default constructor.
-	NRF52DKHWPlatform() noexcept : PlatformBase("nRF52840 Development Kit") {}
+	NRF52DKHWPlatform() noexcept {}
 
 	/// @brief Default destructor.
 	~NRF52DKHWPlatform() noexcept;

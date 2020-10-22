@@ -36,15 +36,7 @@ class nRFi2cMaster final : public embvm::i2c::master, public embvm::HALDriverBas
 	static constexpr uint8_t PRIORITY_DEFAULT = NRF_IRQ_PRIOR_MID;
 
   public:
-	nRFi2cMaster(uint8_t priority = PRIORITY_DEFAULT) noexcept
-		: embvm::i2c::master("nRF I2C Master"), priority_(priority)
-	{
-	}
-
-	nRFi2cMaster(const char* name, uint8_t priority = PRIORITY_DEFAULT) noexcept
-		: embvm::i2c::master(name), priority_(priority)
-	{
-	}
+	nRFi2cMaster(uint8_t priority = PRIORITY_DEFAULT) noexcept : priority_(priority) {}
 
 	~nRFi2cMaster() = default;
 
