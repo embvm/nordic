@@ -12,10 +12,10 @@ class NRF52DongleHWPlatform : public embvm::VirtualHwPlatformBase<NRF52DongleHWP
 
   public:
 	/// @brief Default constructor.
-	NRF52DongleHWPlatform() noexcept
+	NRF52DongleHWPlatform() noexcept;
 
-		/// @brief Default destructor.
-		~NRF52DongleHWPlatform();
+	/// @brief Default destructor.
+	~NRF52DongleHWPlatform();
 
 #pragma mark - Inherited Functions -
 
