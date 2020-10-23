@@ -2,3 +2,4 @@
 url = https://github.com/embvm/arm-architecture.git
 revision = master
 clone-recursive = true
+depth = 1
