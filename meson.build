@@ -59,6 +59,9 @@ if get_option('enable-pedantic-error')
 	desired_common_compile_flags += '-pedantic-error'
 endif
 
+# Silence the warning when -nostdinc and -nostdinc++ are specified together
+desired_common_compile_flags += ['-Wno-unused-command-line-argument']
+
 compile_settings_list = [
 	{'lang': 'c', 'compiler': host_c_compiler, 'flags': desired_c_compile_flags, 'isnative': false},
 	{'lang': 'c', 'compiler': native_c_compiler, 'flags': desired_native_c_compile_flags, 'isnative': true},
