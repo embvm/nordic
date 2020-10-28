@@ -177,7 +177,7 @@ void vPortValidateInterruptPriority(void);
 
 /*-----------------------------------------------------------*/
 
-__STATIC_INLINE uint32_t ulPortRaiseBASEPRI(void)
+static inline uint32_t ulPortRaiseBASEPRI(void)
 {
 	uint32_t ulOriginalBASEPRI = __get_BASEPRI();
 	vPortRaiseBASEPRI();

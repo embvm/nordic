@@ -175,7 +175,7 @@ typedef union
 	bool irq_nested; //< Global was disabled
 } portISRState_t;
 
-__STATIC_INLINE uint32_t ulPortDisableISR(void)
+static inline uint32_t ulPortDisableISR(void)
 {
 	portISRState_t isrs = {0};
 #ifdef SOFTDEVICE_PRESENT
@@ -195,7 +195,7 @@ __STATIC_INLINE uint32_t ulPortDisableISR(void)
 	return isrs.u32;
 }
 
-__STATIC_INLINE void vPortRestoreISR(uint32_t state)
+static inline void vPortRestoreISR(uint32_t state)
 {
 	portISRState_t isrs = {state};
 #ifdef SOFTDEVICE_PRESENT
