@@ -22,6 +22,8 @@ class nRFGPIOTranslator
 	static void configure_i2c(uint8_t port, uint8_t pin) noexcept;
 	static void set(uint8_t port, uint8_t pin) noexcept;
 	static void clear(uint8_t port, uint8_t pin) noexcept;
+	static void toggle(uint8_t port, uint8_t pin) noexcept;
+	static bool get(uint8_t port, uint8_t pin) noexcept;
 
   private:
 	/// This class can't be instantiated

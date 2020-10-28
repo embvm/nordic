@@ -34,12 +34,15 @@ class nRFPinID
 };
 
 template<uint8_t TPort, uint8_t TPin>
-class nRFGPIOOutput final : public embvm::gpio::output
+class nRFGPIO final : public embvm::gpio::base
 {
   public:
-	/** Construct a Nordic GPIO output
+	/** Construct a Nordic GPIO
 	 */
 	nRFGPIOOutput() noexcept {}
+
+	/// Construct a Nordic GPIO with a target mode
+	/// @param [in] mode Target GPIO mode
 
 	/// Default destructor
 	~nRFGPIOOutput() noexcept = default;
@@ -56,10 +59,42 @@ class nRFGPIOOutput final : public embvm::gpio::output
 		}
 	}
 
+	inline void toggle() noexcept final
+	{
+		nRFGPIOTranslator::toggle(TPort, TPin);
+	}
+
+	inline bool get() noexcept final
+	{
+		return nRFGPIOTranslator::get(TPort, TPin);
+	}
+
+	void setMode(embvm::gpio::mode m) noexcept final
+	{
+		switch(m)
+		{
+			case embvm::gpio::mode::input:
+
+				break;
+			case embvm::gpio::mode::output:
+				nRFGPIOTranslator::configure_output(TPort, TPin);
+				break;
+			case embvm::gpio::mode::inout:
+				// Currently unsupported mode
+			case embvm::gpio::mode::special:
+				// Currently unsupported mode
+			case embvm::gpio::mode::MAX_MODE:
+			default:
+				assert(false);
+		}
+
+		mode_ = m;
+	}
+
   private:
 	void start_() noexcept final
 	{
-		nRFGPIOTranslator::configure_output(TPort, TPin);
+		setMode(mode_);
 	}
 
 	void stop_() noexcept final
@@ -67,31 +102,5 @@ class nRFGPIOOutput final : public embvm::gpio::output
 		nRFGPIOTranslator::configure_default(TPort, TPin);
 	}
 };
-
-#if 0
-template<uint8_t TPort, uint8_t TPin>
-class nRFGPIOInput final : public embvm::gpio::input
-{
-  public:
-	/** Construct a generic GPIO input
-	 */
-	explicit nRFGPIOInput() : embvm::gpio::input("nRF GPIO Input") {}
-
-	/** Construct a named GPIO input
-	 *
-	 * @param name The name of the GPIO pin
-	 */
-	explicit nRFGPIOInput(const char* name) : embvm::gpio::input(name) {}
-
-	/// Default destructor
-	~nRFGPIOInput() final = default;
-
-	bool get() final;
-
-  private:
-	void start_() final;
-	void stop_() final;
-};
-#endif
 
 #endif // NRF_GPIO_DRIVER_HPP_

@@ -59,10 +59,12 @@ class NRF52DongleHWPlatform : public embvm::VirtualHwPlatformBase<NRF52DongleHWP
   private:
 	nRF52840 processor;
 
-	nRFGPIOOutput<0, 6> led1_g_pin{};
-	nRFGPIOOutput<0, 8> led2_r_pin{};
-	nRFGPIOOutput<1, 9> led2_g_pin{};
-	nRFGPIOOutput<0, 12> led2_b_pin{};
+	// Why don't we specify a mode here? The LED driver will
+	// take care of setting output mode for us!
+	nRFGPIO<0, 6> led1_g_pin{};
+	nRFGPIO<0, 8> led2_r_pin{};
+	nRFGPIO<1, 9> led2_g_pin{};
+	nRFGPIO<0, 12> led2_b_pin{};
 
 	embvm::led::gpioActiveLow led1{led1_g_pin};
 	embvm::led::gpioActiveLow led2_r{led2_r_pin};

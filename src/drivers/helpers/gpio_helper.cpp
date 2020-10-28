@@ -68,8 +68,24 @@ void nRFGPIOTranslator::set(uint8_t port, uint8_t pin) noexcept
 	embutil::volatile_store(&reg->OUTSET, (UINT32_C(1) << pin));
 }
 
+bool nRFGPIOTranslator::get(uint8_t port, uint8_t pin) noexcept
+{
+	auto reg = portDecode(port);
+	uint32_t state = embutil::volatile_load(&reg->IN);
+	return state & (UINT32_C(1) << pin);
+}
+
 void nRFGPIOTranslator::clear(uint8_t port, uint8_t pin) noexcept
 {
 	auto reg = portDecode(port);
 	embutil::volatile_store(&reg->OUTCLR, (UINT32_C(1) << pin));
+}
+
+void nRFGPIOTranslator::toggle(uint8_t port, uint8_t pin) noexcept
+{
+	auto reg = portDecode(port);
+	uint32_t state = embutil::volatile_load(&reg->OUT);
+
+	embutil::volatile_store(&reg->OUTSET, (~state & (UINT32_C(1) << pin)));
+	embutil::volatile_store(&reg->OUTCLR, (state & (UINT32_C(1) << pin)));
 }
