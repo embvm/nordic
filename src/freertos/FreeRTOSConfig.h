@@ -187,7 +187,6 @@ standard names - or at least those used in the unmodified vector table. */
 
 /* Code below should be only used by the compiler, and not the assembler. */
 #if !(defined(__ASSEMBLY__) || defined(__ASSEMBLER__))
-#include <processor_includes.hpp>
 /* This part of definitions may be problematic in assembly - it uses definitions from files that are
  * not assembly compatible. */
 /* Cortex-M specific definitions. */

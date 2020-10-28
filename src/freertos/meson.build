@@ -1,6 +1,11 @@
 # Nordic FreeRTOS Port
 
 # TODO: How can we override our port/config file? Right now they're forced to use ours
+# TODO: I'd like to refactor the way this build is handled so that we're not exposing the nRF MDK
+# headers to other modules. This might mean that we need to pull in freertos dependencies into
+# this file, where we then build a static library and link to the final application.
+#
+# The problem is that FreeRTOS Config.h needs nRF52840 headers...
 
 nrf51_freertos_dep = declare_dependency(
     sources: files(
