@@ -30,6 +30,7 @@
 #define PORTMACRO_CMSIS_H
 
 #include <math/rounded_div.h>
+#include <nrf52840.h>
 
 #ifdef __cplusplus
 extern "C" {

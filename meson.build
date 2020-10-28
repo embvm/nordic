@@ -99,6 +99,7 @@ framework_host_include_dep = embvm_core_subproject.get_variable('framework_host_
 
 nrfx_subproject = subproject('nrfx')
 nrfx_nrf52840_dep = nrfx_subproject.get_variable('nrfx_nrf52840_dep')
+nrfx_includes = nrfx_subproject.get_variable('nrfx_includes')
 
 arm_architecture_subproject = subproject('arm-architecture')
 arm_dep = arm_architecture_subproject.get_variable('arm_dep')

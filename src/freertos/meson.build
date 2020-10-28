@@ -36,6 +36,7 @@ nrf52_freertos_dep = declare_dependency(
 	    include_directories('.'),
     	cmsis_cortex_m_include,
     	nordic_private_include_dirs,
+        nrfx_includes, # TODO: REMOVE when I figure out how
     	include_directories('nrf52'),
     ],
     # TODO: is this really needed? Or can we just say: you need to depend on freertos_core_dep and
