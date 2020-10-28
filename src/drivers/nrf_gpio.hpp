@@ -39,13 +39,18 @@ class nRFGPIO final : public embvm::gpio::base
   public:
 	/** Construct a Nordic GPIO
 	 */
-	nRFGPIOOutput() noexcept {}
+	nRFGPIO() noexcept : mode_(embvm::gpio::mode::input) {}
+
+	/// Construct a GPIO with a mode
+	/// @param [in] mode The desired mode to initialize the GPIO to when
+	/// 	starting the pin.
+	explicit nRFGPIO(embvm::gpio::mode mode) noexcept : mode_(mode) {}
 
 	/// Construct a Nordic GPIO with a target mode
 	/// @param [in] mode Target GPIO mode
 
 	/// Default destructor
-	~nRFGPIOOutput() noexcept = default;
+	~nRFGPIO() noexcept = default;
 
 	void set(bool v) noexcept final
 	{
@@ -79,8 +84,6 @@ class nRFGPIO final : public embvm::gpio::base
 			case embvm::gpio::mode::output:
 				nRFGPIOTranslator::configure_output(TPort, TPin);
 				break;
-			case embvm::gpio::mode::inout:
-				// Currently unsupported mode
 			case embvm::gpio::mode::special:
 				// Currently unsupported mode
 			case embvm::gpio::mode::MAX_MODE:
@@ -89,6 +92,11 @@ class nRFGPIO final : public embvm::gpio::base
 		}
 
 		mode_ = m;
+	}
+
+	embvm::gpio::mode mode() noexcept final
+	{
+		return mode_;
 	}
 
   private:
@@ -101,6 +109,9 @@ class nRFGPIO final : public embvm::gpio::base
 	{
 		nRFGPIOTranslator::configure_default(TPort, TPin);
 	}
+
+  private:
+  	embvm::gpio::mode mode_;
 };
 
 #endif // NRF_GPIO_DRIVER_HPP_
