@@ -8,9 +8,6 @@
 #include <driver/i2c.hpp>
 #include <nordic_defs.hpp>
 
-// TODO: remove
-#include <volatile/volatile.hpp>
-
 // TODO: run an experiment where TTWIIndex, TSclPin, TSdaPin are static const members to see
 // if there is better optimization possibility (classes are unified)
 
@@ -79,6 +76,7 @@ class nRFi2cMaster final : public embvm::i2c::master, public embvm::HALDriverBas
 		nRFGPIOTranslator::configure_default(TSdaPin::port(), TSdaPin::pin());
 	}
 
+	// TODO: handle internal pull-ups
 	void configure_([[maybe_unused]] embvm::i2c::pullups pullup) noexcept final {}
 
 	embvm::i2c::status transfer_(const embvm::i2c::op_t& op,
@@ -212,6 +210,7 @@ class nRFi2cMaster final : public embvm::i2c::master, public embvm::HALDriverBas
 
 	embvm::i2c::pullups setPullups_(embvm::i2c::pullups pullups) noexcept final
 	{
+		// TODO:
 		return pullups;
 	}
 
@@ -226,6 +225,8 @@ class nRFi2cMaster final : public embvm::i2c::master, public embvm::HALDriverBas
 	}
 
   private:
+	// TODO: this won't support multiple instances...  use STM32 approach
+	// as a better example
 	void twim_callback_(embvm::i2c::status status) noexcept
 	{
 		static embvm::i2c::master::cb_t cb;
