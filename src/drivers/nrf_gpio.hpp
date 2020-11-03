@@ -111,7 +111,7 @@ class nRFGPIO final : public embvm::gpio::base
 	}
 
   private:
-  	embvm::gpio::mode mode_;
+	embvm::gpio::mode mode_;
 };
 
 #endif // NRF_GPIO_DRIVER_HPP_

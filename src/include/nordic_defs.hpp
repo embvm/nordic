@@ -7,7 +7,6 @@
 #define __CORTEX_M 0
 #endif
 
-
 #if __CORTEX_M == (0x00U)
 #ifndef __NVIC_PRIO_BITS
 // We redefine this here to prevent needing to include nrf51 headers
