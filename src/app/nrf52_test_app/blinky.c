@@ -1,3 +1,6 @@
+// Copyright 2020 Embedded Artistry LLC
+// SPDX-License-Identifier: MIT
+
 #include "boards.h"
 #include "nrf_delay.h"
 #include <stdbool.h>

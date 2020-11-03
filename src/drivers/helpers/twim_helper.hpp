@@ -1,3 +1,6 @@
+// Copyright 2020 Embedded Artistry LLC
+// SPDX-License-Identifier: MIT
+
 #ifndef NRF_TWIM_HELPER_HPP_
 #define NRF_TWIM_HELPER_HPP_
 

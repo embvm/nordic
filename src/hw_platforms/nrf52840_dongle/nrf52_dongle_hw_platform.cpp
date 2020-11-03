@@ -1,3 +1,6 @@
+// Copyright 2020 Embedded Artistry LLC
+// SPDX-License-Identifier: MIT
+
 #include "nrf52_dongle_hw_platform.hpp"
 #include <cassert>
 #include <malloc.h>

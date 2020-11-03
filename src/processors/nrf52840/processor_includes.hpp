@@ -1,3 +1,6 @@
+// Copyright 2020 Embedded Artistry LLC
+// SPDX-License-Identifier: MIT
+
 #ifndef NRF52840_PROCESSOR_INCLUDES_HPP_
 #define NRF52840_PROCESSOR_INCLUDES_HPP_
 

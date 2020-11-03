@@ -1,3 +1,6 @@
+// Copyright 2020 Embedded Artistry LLC
+// SPDX-License-Identifier: MIT
+
 #include <platform.hpp>
 
 volatile bool abort_program_ = false;

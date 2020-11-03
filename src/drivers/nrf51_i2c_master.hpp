@@ -1,3 +1,6 @@
+// Copyright 2020 Embedded Artistry LLC
+// SPDX-License-Identifier: MIT
+
 #ifndef NRF51_I2C_MASTER_BLOCKING_HPP_
 #define NRF51_I2C_MASTER_BLOCKING_HPP_
 

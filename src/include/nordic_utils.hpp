@@ -1,3 +1,6 @@
+// Copyright 2020 Embedded Artistry LLC
+// SPDX-License-Identifier: MIT
+
 #ifndef NORDIC_UTILS_HPP_
 #define NORDIC_UTILS_HPP_
 

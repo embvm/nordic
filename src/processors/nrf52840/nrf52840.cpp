@@ -1,3 +1,6 @@
+// Copyright 2020 Embedded Artistry LLC
+// SPDX-License-Identifier: MIT
+
 #include "nrf52840.hpp"
 #include <cassert>
 #include <processor_architecture.hpp>

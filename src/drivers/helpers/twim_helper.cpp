@@ -1,3 +1,6 @@
+// Copyright 2020 Embedded Artistry LLC
+// SPDX-License-Identifier: MIT
+
 #include "twim_helper.hpp"
 #include "twim_helper_.hpp"
 #include <nordic_nvic.hpp>

@@ -1,3 +1,6 @@
+// Copyright 2020 Embedded Artistry LLC
+// SPDX-License-Identifier: MIT
+
 #ifndef NRF52840_DONGLE_HW_PLATFORM_HPP_
 #define NRF52840_DONGLE_HW_PLATFORM_HPP_
 

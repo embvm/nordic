@@ -1,3 +1,6 @@
+// Copyright 2020 Embedded Artistry LLC
+// SPDX-License-Identifier: MIT
+
 #ifndef NRF52_DK_HW_PLATFORM_HPP_
 #define NRF52_DK_HW_PLATFORM_HPP_
 

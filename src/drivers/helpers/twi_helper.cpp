@@ -1,3 +1,6 @@
+// Copyright 2020 Embedded Artistry LLC
+// SPDX-License-Identifier: MIT
+
 #include "twi_helper.hpp"
 #include "twi_helper_.hpp"
 #include <processor_includes.hpp>
