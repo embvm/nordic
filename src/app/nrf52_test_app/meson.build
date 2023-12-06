@@ -163,7 +163,7 @@ blinky_migratory_dongle_app = executable('blinky_migratory_dongle',
 	],
 )
 
-target_objcopy = find_program(meson.get_cross_property('objcopy'))
+target_objcopy = find_program(meson.get_external_property('objcopy'))
 
 blinky_app_hex = custom_target('nrf5284_dongle_blinky.hex',
 	input: blinky_app,
